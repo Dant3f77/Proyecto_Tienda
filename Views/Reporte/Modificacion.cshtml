@@ -1,0 +1,58 @@
+﻿@model Proyecto_Tienda.Models.Reporte
+@{
+    ViewBag.Title = "Modificacion";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Alta</title>
+</head>
+<body>
+    <div>
+
+        <form method="post" action="/Reporte/Modificacion">
+
+            <br />
+            <label>
+                Id:
+                <input type="text" name="Id" value="@Model.Id" />
+            </label>
+
+            <br />
+            <label>
+                IdSucursal:
+                <input type="text" name="IdSucursal" value="@Model.IdSucursal" />
+            </label>
+
+            <br />
+            <label>
+                IdSucursal:
+                <input type="text" name="IdSucursal" value="@Model.IdSucursal" />
+            </label>
+
+            <br />
+            <label>
+                Fecha:
+                <input type="text" name="Fecha" value="@Model.Fecha" />
+            </label>
+
+            <br />
+            <label>
+                Memo:
+                <input type="text" name="Memo" value="@Model.Memo" />
+            </label>
+
+            <br />
+            <label>
+                Total:
+                <input type="text" name="Total" value="@Model.Total" />
+            </label>
+
+            <br />
+            <input type="submit" value="Confirmar" />
+        </form>
+    </div>
+</body>
+</html>

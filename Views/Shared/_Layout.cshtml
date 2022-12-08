@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>SISTEMA DE FACTURACION</h1>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/Cliente/Index">Cliente</a>
+                </li>
+                <li>
+                    <a href="/Usuario/Index">Usuario</a>
+                </li>
+                <li>
+                    <a href="/Area/Index">Area</a>
+                </li>
+                <li>
+                    <a href="/Factura/Creacion">Facturacion</a>
+                </li>
+                <li>
+                    <a href="/Producto/Alta">Inventario</a>
+                </li>
+                <li>
+                    <a href="/Abastecimiento/Alta">Abastecimiento</a>
+                </li>
+                <li>
+                    <a href="/Tienda/Index">Sucursal</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <br />
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Sistema de Facturacion <br /> Universidad Don Bosco </p>
+        </footer>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

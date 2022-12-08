@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Proyecto_Tienda.Models.DetalleFactura>
+@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <title>Index</title>
+</head>
+<body>
+    <table class="table">
+        
+
+        @foreach (var detalle in Model)
+        {
+            <tr>
+                <td>
+                    @detalle.Id
+                </td>
+                <td>
+                    @detalle.IdDetalle
+                </td>
+                <td>
+                    @detalle.Precio
+                </td>
+                <td>
+                    @detalle.Cantidad
+                </td>
+                <td>
+                    @detalle.IdProducto
+                </td>
+                <td>
+                    @detalle.IdFactura
+                </td>
+                
+                <td>
+                    <a href="/DetalleFactura/Modificacion?Id=@detalle.Id">modifica?</a>
+                    <a href="/DetalleFactura/Baja?Id=@detalle.Id">Borrar</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+    <a href="/DetalleFactura/Alta">Agregar</a>
+</body>
+</html>

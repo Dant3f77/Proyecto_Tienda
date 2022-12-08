@@ -1,0 +1,145 @@
+﻿@model IEnumerable<Proyecto_Tienda.Models.Abastecimiento>
+@{
+    ViewBag.Title = "Alta";
+}
+<div>
+    <h4>Realizar Abastecimientos</h4>
+    <hr />
+    <br />
+    <form method="post" action="/Abastecimiento/Alta">
+        <div class="row">
+            <div class="col-md-4">
+                <label>
+                    Sucursal que envia:
+                </label>
+                <select class="form-select" name="IdSucursalEnv" required>
+                    @foreach (var sucursal in @ViewBag.sucursales)
+                    {
+                        <option value=@sucursal.Id> @sucursal.Sucursal </option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label>
+                    Sucursal que recibe:
+                </label>
+                <select class="form-select" name="IdSucursalRec" required>
+                    @foreach (var sucursal in @ViewBag.sucursales)
+                    {
+                        <option value=@sucursal.Id> @sucursal.Sucursal </option>
+                    }
+                </select>
+
+            </div>
+            <div class="col-md-4">
+                <label>Seleccione el Producto:</label>
+                <select class="form-select" name="IdProducto" required>
+
+                    @foreach (var producto in ViewBag.producto)
+                    {
+                        <option value=@producto.Id> @producto.Descripcion </option>
+                    }
+
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label>
+                    fecha:
+                    <input type="text" class="mb-2 form-control" name="Fecha" required />
+                </label>
+            </div>
+            <div class="col-md-4">
+                <label for="sucursal">Usuario:</label>
+                <select class="form-select" name="IdUser" required>
+                    @foreach (var usuario in ViewBag.Usuario)
+                    {
+                        <option value=@usuario.Id> @usuario.User </option>
+
+                    }
+                </select>
+            </div>
+            <div class="col-md-4">
+                <input type="submit" class="btn btn-success" value="Agregar" />
+            </div>
+        </div>
+    </form>
+</div>
+<br />
+<div>
+    <h4>Lista de abastecimientos</h4>
+    <hr />
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Sucursal Salida</th>
+                <th scope="col">Sucursal Entrada</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var abastecimiento in Model)
+            {
+                <tr>
+                    <td>
+                        @abastecimiento.Id
+                    </td>
+                    <td>
+                        @foreach (var sucursal in ViewBag.sucursales)
+                        {
+                            if (@abastecimiento.IdSucursalEnv == sucursal.Id)
+                            {
+                                @sucursal.Sucursal
+                            }
+                        }
+
+                    </td>
+                    <td>
+                        @foreach (var sucursal in ViewBag.sucursales)
+                        {
+                            if (@abastecimiento.IdSucursalRec == sucursal.Id)
+                            {
+                                @sucursal.Sucursal
+                            }
+                        }
+
+                    </td>
+                    <td>
+                        @foreach (var producto in ViewBag.producto)
+                        {
+                            if (@abastecimiento.IdProducto == producto.Id)
+                            {
+                                @producto.Descripcion
+                            }
+                        }
+
+                    </td>
+                    <td>
+                        @abastecimiento.Fecha
+                    </td>
+                    <td>
+                        @foreach (var usuario in ViewBag.usuario)
+                        {
+                            if (@abastecimiento.IdUser == usuario.Id)
+                            {
+
+                                @usuario.User
+                            }
+                        }
+
+                    </td>
+
+                    <td>
+
+                        <a href="/Abastecimiento/Modificacion?Id=abastecimiento.Id">modifica?</a>
+                        <a href="/Abastecimiento/Baja?Id=abastecimiento.Id">Borrar</a>
+                    </td>
+                </tr>
+            }
+
+    </table>
+</div>

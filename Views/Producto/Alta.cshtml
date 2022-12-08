@@ -1,0 +1,151 @@
+﻿@{
+    ViewBag.Title = "Alta";
+}
+
+    <div class="container">
+        <div class=" d-flex flex-column bd-highlight mb-3">
+            <div class="col-md-12 row">
+                <h4>Creación de Productos</h4>
+                <hr/>
+                <form method="post" action="/Producto/Alta">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>
+                                Codigo:
+                            </label>
+                            <input type="text" class="mb-2 form-control" name="Codigo" required />
+                        </div>
+                        <div class="col-md-4">
+                            <label>
+                                Descripcion:
+                            </label>
+                            <input type="text" class="mb-2 form-control" name="Descripcion" required />
+                        </div>
+                        <div class="col-md-4">
+                            <label>
+                                Marca:
+                            </label>
+                            <input type="text" class="mb-2 form-control" name="Marca" required />
+                        </div>
+                        <div class="col-md-4">
+                            <label>
+                                Cantidad a Ingresar
+                            </label>
+                            <input type="number" class="mb-2 form-control" name="Stock" required />
+                        </div>
+
+                        <div class="col-md-4">
+                            <label>
+                                Precio Costo:
+                            </label>
+                            <input type="text" class="mb-2 form-control" name="PrecioCosto" required />
+                        </div>
+                        <div class="col-md-4">
+                            <label>
+                                Precio Venta:
+                            </label>
+                            <input type="text" class="mb-2 form-control" name="PrecioVenta" required />
+                        </div>
+                        <div class="col-md-4">
+                            <label>Proveedor:</label>
+                            <select class="form-select" name="IdProveedor" required>
+                                @foreach (var proveedor in ViewBag.Proveedor)
+                                {
+                                    <option value=@proveedor.Id> @proveedor.Proveedor </option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label>Sucursal:</label>
+                            <select class="form-select" name="IdTienda" required>
+                                @foreach (var sucursal in ViewBag.sucursales)
+                                {
+                                    <option value=@sucursal.Id> @sucursal.Sucursal </option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <input class="btn btn-primary" type="submit" value="Agregar a Inventario" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <br/>
+            <hr/>
+            <div>
+                <h4>Lista de Productos</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">codigo</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Costo</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Proveedor</th>
+                            <th scope="col">Sucursal</th>
+                            <th scope="col">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var producto in ViewBag.productos)
+                        {
+                            <tr>
+                                <td>
+                                    @producto.Id
+                                </td>
+                                <td>
+                                    @producto.Codigo
+                                </td>
+                                <td>
+                                    @producto.Descripcion
+                                </td>
+                                <td>
+                                    @producto.Marca
+                                </td>
+                                <td>
+                                    @producto.Stock
+                                </td>
+                                <td>
+                                    @producto.PrecioCosto
+                                </td>
+                                <td>
+                                    @producto.PrecioVenta
+                                </td>
+                                <td>
+                                    @foreach (var proveedor in ViewBag.Proveedor)
+                                    {
+                                        if (producto.IdProveedor==proveedor.Id)
+                                        {
+                                            @proveedor.Proveedor
+                                        }
+                                        
+                                    }
+                                </td>
+                                <td>
+                                    
+                                        @foreach (var sucursal in ViewBag.sucursales)
+                                        {
+                                            if (producto.IdTienda == sucursal.Id)
+                                            {
+                                                @sucursal.Sucursal
+                                            }
+                                        }
+                                    
+                                </td>
+                                <td>
+                                    <a href="/Producto/Modificacion?Id=@producto.Id">modifica?</a>
+                                    <a href="/Producto/Baja?Id=@producto.Id">Borrar</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+  

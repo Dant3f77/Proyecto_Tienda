@@ -1,0 +1,51 @@
+﻿@model Proyecto_Tienda.Models.Usuario
+@{
+    ViewBag.Title = "Modificacion";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Alta</title>
+</head>
+<body>
+    <div>
+
+        <form method="post" action="/Usuario/Modificacion">
+
+            <br />
+            <label>
+                Id:
+                <input type="text" name="Id" value="@Model.Id" />
+            </label>
+            
+            <br />
+            <label>
+                Usuario:
+            </label>
+            <input type="text" name="Usuario" value="@Model.User" />
+            <br />
+            <label>
+                Contraseña:
+                <input type="text" name="Contraseña" value="@Model.Contraseña" />
+            </label>
+            
+            <br />
+            <label>
+                IdArea:
+                <input type="text" name="IdArea" value="@Model.IdArea" />
+            </label>
+            
+            <br />
+            <label>
+                IdTienda:
+                <input type="text" name="IdTienda" value="@Model.IdTienda" />
+            </label>
+            
+            <br />
+            <input type="submit" value="Confirmar" />
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿@model Proyecto_Tienda.Models.Producto
+@{
+    ViewBag.Title = "Modificacion";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Alta</title>
+</head>
+<body>
+    <div>
+
+        <form method="post" action="/Producto/Modificacion">
+
+            <br />
+            <label>
+                Id:
+                <input type="text" name="Id" value="@Model.Id" />
+            </label>
+            
+            <br />
+            <label>
+                Proveedor:
+                <input type="text" name="Marca" value="@Model.Marca" />
+            </label>
+           
+            <br />
+            <label>
+                Codigo
+                <input type="text" name="Codigo" value="@Model.Codigo" />
+            </label>
+            
+            <br />
+            <label>
+                Descripcion:
+                <input type="text" name="Descripcion" value="@Model.Descripcion" />
+            </label>
+            
+            <br />
+            <label>
+                PreciocVenta:
+                <input type="text" name="PrecioVenta" value="@Model.PrecioVenta" />
+                <br />
+            </label>
+            
+            <label>
+                Precio Costo:
+                <input type="text" name="PrecioCosto" value="@Model.PrecioCosto" />
+            </label>
+            
+            <br />
+            <label>
+                Stock:
+                <input type="text" name="Stock" value="@Model.Stock" />
+            </label>
+           
+            <br />
+            <label>
+                Id Tienda:
+                <input type="text" name="IdTienda" value="@Model.IdTienda" />
+            </label>
+            
+            <br />
+            <label>
+                Id Proveedor:
+                <input type="text" name="IdProveedor" value="@Model.IdProveedor" />
+            </label>
+            
+            <br />
+
+            <input type="submit" value="Confirmar" />
+        </form>
+    </div>
+</body>
+</html>

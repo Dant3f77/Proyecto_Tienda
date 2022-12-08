@@ -1,0 +1,40 @@
+﻿@model Proyecto_Tienda.Models.Proveedores
+@{
+    ViewBag.Title = "Modificacion";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Alta</title>
+</head>
+<body>
+    <div>
+
+        <form method="post" action="/Proveedor/Modificacion">
+
+            <br />
+            <label>
+                Id:
+                <input type="text" name="Id" value="@Model.Id" />
+            </label>
+            
+            <br />
+            <label>
+                Proveedor:
+                <input type="text" name="Proveedor" value="@Model.Proveedor" />
+            </label>
+            
+            <br />
+            <label>
+                Contacto:
+                <input type="text" name="Contacto" value="@Model.Contacto" />
+            </label>
+           
+            <br />
+            <input type="submit" value="Confirmar" />
+        </form>
+    </div>
+</body>
+</html>

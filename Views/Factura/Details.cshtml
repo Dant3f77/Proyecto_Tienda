@@ -1,0 +1,179 @@
+﻿@model Proyecto_Tienda.Models.Factura
+
+<div>
+    <h4>Detalle Comprobante</h4>
+    <hr />
+    <dl class="dl-horizontal row">
+        <div class="col-md-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.NumFactura)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumFactura)
+            </dd>
+        </div>
+
+        <div class="col-md-4">
+            <dt class="">
+                @Html.DisplayNameFor(model => model.IdFactura)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IdFactura)
+            </dd>
+        </div>
+
+        <div class="col-md-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fecha)
+            </dd>
+        </div>
+
+        <div class="col-md-4">
+            @foreach (var cliente in ViewBag.clientes)
+            {
+                if(@ViewBag.Factura.IdCliente == @cliente.Id) { 
+
+                    <dt>
+                        Cliente
+                    </dt>
+
+                    <dd>
+                        @cliente.Nombre
+                    </dd>
+                }
+            }
+            </div>
+
+        <div class="col-md-4">
+            <dt>
+                Tipo de Pago
+            </dt>
+            @if (@ViewBag.Factura.TipoPago == "1")
+            {
+                <dd>
+                    Efectivo
+                </dd>
+            }
+            else
+            {
+                <dd>
+                    Tarjeta
+                </dd>
+            }
+        </div>
+        <div class="col-md-4">
+            <dt>
+                Tipo de Documento
+            </dt>
+            @if (@ViewBag.Factura.TipoFactura == "1")
+            {
+                <dd>
+                    Factura
+                </dd>
+            }
+            else
+            {
+                <dd>
+                    Credito Fiscal
+                </dd>
+            }
+        </div>
+
+        <div class="col-md-4">
+            <dt>
+                @foreach (var sucursal in ViewBag.sucursales)
+                {
+                    if (@ViewBag.Factura.IdSucursal == sucursal.Id)
+                    {
+
+                    <dt>
+                        Sucursal
+                    </dt>
+
+                    <dd>
+                        @sucursal.Sucursal
+                    </dd>
+                }
+            }           
+            </div>
+
+        <div class="col-md-4">
+            @foreach (var usuario in ViewBag.usuario)
+            {
+                if (@ViewBag.Factura.IdVendedor == usuario.Id)
+                {
+
+                    <dt>
+                        Vendedor
+                    </dt>
+
+                    <dd>
+                        @usuario.User
+                    </dd>
+                }
+            }
+        </div>
+    </dl>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" required>Cantidad</th>
+                <th scope="col" required>Producto</th>
+                <th scope="col" required>Precio Unitario</th>
+                <th scope="col" required>Total</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+            @foreach (var detalle in ViewBag.itemsFactura)
+            {
+                <tr>
+                    <td>
+                        @detalle.Cantidad
+                    </td>
+
+                    <td>
+                        @foreach (var producto in ViewBag.producto)
+                        {
+                            if (@detalle.IdProducto == producto.Id)
+                            {
+                                @producto.Descripcion
+                            }
+                        }
+                        </td>
+                    <td>
+                        @detalle.Precio
+                    </td>
+                    <td>
+                        @(@detalle.Cantidad * @detalle.Precio)
+
+                    </td>
+
+
+                </tr>
+            }
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>
+                @ViewBag.total
+             </td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+<p>
+
+    @Html.ActionLink("Crear nueva Factura", "Creacion") -
+    <a href="/Factura/Index">Regresar</a>
+</p>

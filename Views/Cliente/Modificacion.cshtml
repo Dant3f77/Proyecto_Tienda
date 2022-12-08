@@ -1,0 +1,40 @@
+﻿@model Proyecto_Tienda.Models.Cliente
+@{
+    ViewBag.Title = "Modificacion";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Modificacion</title>
+</head>
+<body>
+    <div>
+
+        <form method="post" action="/Cliente/Modificacion">
+
+            <br />
+            <label>
+                Id:
+                <input type="text" name="Id" value="@Model.Id" />
+            </label>
+
+            <br />
+            <label>
+                Nombre:
+                <input type="text" name="Nombre" value="@Model.Nombre" />
+            </label>
+
+            <br />
+            <label>
+                Direccion:
+                <input type="text" name="Direccion" value="@Model.Direccion" />
+            </label>
+
+            <br />
+            <input type="submit" value="Confirmar" />
+        </form>
+    </div>
+</body>
+</html>

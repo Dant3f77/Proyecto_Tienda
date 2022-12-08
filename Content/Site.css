@@ -1,0 +1,49 @@
+﻿body {
+    padding:0px;
+       margin:0px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+header {
+    width: 100%;
+    background: #34495e;
+    padding: 50px;
+    text-align:center;
+}
+
+h1 {
+    color: #ecf0f1;
+}
+    header nav {
+        width: 100%;        
+    }
+header nav ul{
+    width: 100%;
+    list-style:none;
+    text-decoration:none;
+    text-align:center;
+}
+
+header nav ul li{
+    text-decoration:none;
+    display:inline-block;
+    vertical-align:top;
+    padding: 5px 20px;    
+}
+
+    header nav ul li a {
+        color: #ecf0f1;
+    }
+
+    header nav ul li:hover a {
+        color: #bdc3c7;
+    }
+
+    footer{
+        text-align:center;
+    }

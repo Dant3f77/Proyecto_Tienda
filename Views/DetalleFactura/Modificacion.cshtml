@@ -1,0 +1,50 @@
+﻿@model Proyecto_Tienda.Models.DetalleFactura
+@{
+    ViewBag.Title = "Modificacion";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Alta</title>
+</head>
+<body>
+    <div>
+
+        <form method="post" action="/DetalleFactura/Modificacion">
+
+            <br />
+            <label>
+                Id:
+                <input type="text" name="Id" value="@Model.Id" />
+            </label>            
+            <br />
+            <label>
+                Precio:
+            <input type="text" name="Precio" value="@Model.Precio" />
+            </label>            
+            <br />
+            <label>
+                Cantidad:
+                <input type="text" name="Cantidad" value="@Model.Cantidad" />
+            </label>
+            
+            <br />
+            <label>
+                IdProducto:
+                <input type="text" name="IdProducto" value="@Model.IdProducto" />
+            </label>
+            
+            <br />
+            <label>
+                IdFactura;
+                <input type="text" name="IdFactura" value="@Model.IdFactura" />
+            </label>
+            <br />
+
+            <input type="submit" value="Confirmar" />
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿@model Proyecto_Tienda.Models.Abastecimiento
+@{
+    ViewBag.Title = "Modificacion";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Alta</title>
+</head>
+<body>
+    <div>
+
+        <form method="post" action="/Abasteciemiento/Modificacion">
+            
+            <br />
+            <label>
+                Id:
+                <input type="text" name="Id" value="@Model.Id" />
+            </label>
+
+            <br />
+            <label>
+                IdSucursalEnv:
+                <input type="text" name="IdSucursalEnv" value="@Model.IdSucursalEnv" />
+            </label>
+
+            <br />
+            <label>
+                IdSucursalRec:
+                <input type="text" name="IdSucursalRec" value="@Model.IdSucursalRec" />
+            </label>
+
+            <br />
+            <label>
+                IdProducto:
+                <input type="text" name="IdProducto" value="@Model.IdProducto" />
+            </label>
+
+            <br />
+            <label>
+                Fecha:
+                <input type="text" name="Fecha" value="@Model.Fecha" />
+            </label>
+
+            <br />
+            <label>
+                IdUser:
+                <input type="text" name="IdUser" value="@Model.IdUser" />
+            </label>
+
+            
+            <br />
+            <input type="submit" value="Confirmar" />
+        </form>
+    </div>
+</body>
+</html>
+
