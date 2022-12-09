@@ -121,7 +121,7 @@
                     <td>
                         @abastecimiento.Fecha
                     </td>
-                    <td>
+                    <td  >
                         @foreach (var usuario in ViewBag.usuario)
                         {
                             if (@abastecimiento.IdUser == usuario.Id)
@@ -135,8 +135,8 @@
 
                     <td>
 
-                        <a href="/Abastecimiento/Modificacion?Id=abastecimiento.Id">modifica?</a>
-                        <a href="/Abastecimiento/Baja?Id=abastecimiento.Id">Borrar</a>
+                        <a class="btn btn-secondary btn-sm" href="/Abastecimiento/Modificacion?Id=abastecimiento.Id">modifica?</a>
+                        <a class="btn btn-danger btn-sm" href="/Abastecimiento/Baja?Id=abastecimiento.Id">Borrar</a>
                     </td>
                 </tr>
             }

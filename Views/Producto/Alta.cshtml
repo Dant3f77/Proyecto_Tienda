@@ -55,7 +55,7 @@
                                 }
                             </select>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 mb-3">
                             <label>Sucursal:</label>
                             <select class="form-select" name="IdTienda" required>
                                 @foreach (var sucursal in ViewBag.sucursales)
@@ -137,8 +137,8 @@
                                     
                                 </td>
                                 <td>
-                                    <a href="/Producto/Modificacion?Id=@producto.Id">modifica?</a>
-                                    <a href="/Producto/Baja?Id=@producto.Id">Borrar</a>
+                                    <a class="btn btn-secondary btn-sm" href="/Producto/Modificacion?Id=@producto.Id">modifica?</a>
+                                    <a class="btn btn-danger btn-sm" href="/Producto/Baja?Id=@producto.Id">Borrar</a>
                                 </td>
                             </tr>
                         }

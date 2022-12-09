@@ -29,13 +29,13 @@
                     @cliente.Direccion
 
                 <td>
-                    <a href="/Cliente/Modificacion?Id=@cliente.Id">modifica?</a>
-                    <a href="/Cliente/Baja?Id=@cliente.Id">Borrar</a>
+                    <a class="btn btn-sm btn-secondary" href="/Cliente/Modificacion?Id=@cliente.Id">modifica?</a>
+                    <a class="btn btn-sm btn-danger" href="/Cliente/Baja?Id=@cliente.Id">Borrar</a>
                 </td>
             </tr>
         }
 
     </table>
-    <a href="/Cliente/Alta">Agregar</a>
+   <a class="btn btn-success" href="/Cliente/Alta">Agregar</a> 
 </body>
 </html>
